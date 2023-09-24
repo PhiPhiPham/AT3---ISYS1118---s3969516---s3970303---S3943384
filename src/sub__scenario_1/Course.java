@@ -11,6 +11,36 @@ public class Course {
         this.category = category;
     }
 
+    // Getter for title
+    public String getTitle() {
+        return title;
+    }
+
+    // Setter for title
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    // Getter for courseDescription
+    public String getCourseDescription() {
+        return courseDescription;
+    }
+
+    // Setter for courseDescription
+    public void setCourseDescription(String courseDescription) {
+        this.courseDescription = courseDescription;
+    }
+
+    // Getter for category
+    public String getCategory() {
+        return category;
+    }
+
+    // Setter for category
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     public boolean createMultipleChoice() {
         System.out.print("Created Multiple Choices!");
         return true;

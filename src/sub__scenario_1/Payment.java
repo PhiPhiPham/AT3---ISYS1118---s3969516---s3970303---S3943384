@@ -11,4 +11,34 @@ public class Payment {
         this.paymentOption = paymentOption;
     }
 
+    // Getter for 'amount'
+    public int getAmount() {
+        return amount;
+    }
+
+    // Setter for 'amount'
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    // Getter for 'payment'
+    public boolean isPayment() {
+        return payment;
+    }
+
+    // Setter for 'payment'
+    public void setPayment(boolean payment) {
+        this.payment = payment;
+    }
+
+    // Getter for 'paymentOption'
+    public String getPaymentOption() {
+        return paymentOption;
+    }
+
+    // Setter for 'paymentOption'
+    public void setPaymentOption(String paymentOption) {
+        this.paymentOption = paymentOption;
+    }
+
 }
