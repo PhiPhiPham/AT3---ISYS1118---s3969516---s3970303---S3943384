@@ -1,9 +1,9 @@
 package sub__scenario_1;
 
-public class Admin {
+public abstract class Admin extends User {
 
-    public Admin() {
-        
+    public Admin(String name, String address, String email, int phoneNo, String username, String password) {
+        super(name, address, email, phoneNo, username, password);
     }
     
     public String sendAutoEmail(String email) {
