@@ -1,6 +1,5 @@
 import sub_scenario_1.*;
 import sub_scenario_2.*;
-import sub_scenario_2.Database;
 public class main {
     public static void main(String[] args) {
         // Instantiating a database
@@ -31,7 +30,7 @@ public class main {
         database.registerCourse(course1);
 
 
-        // Alt Route of adding a course but is an existing instructor
+        //// Alt Route of adding a course but is an existing instructor ////
 
         // User wants to add register by adding a course
         sub_scenario_1.Course course2 = new sub_scenario_1.Course("Introduction to Algorithms", "Description of Course", "Algorithms");

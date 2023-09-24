@@ -1,9 +1,13 @@
 package sub_scenario_1;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Payment {
     private int amount;
     private boolean payment;
     private String paymentOption;
+    private List<Instructor> paidInstructors; 
+    private List<Instructor> paidStudents; 
 
     public Payment(int amount, boolean payment, String paymentOption){
         this.amount = amount;
@@ -40,5 +44,20 @@ public class Payment {
     public void setPaymentOption(String paymentOption) {
         this.paymentOption = paymentOption;
     }
+
+    
+    // Instructor paying to add a course. If already paid, additional courses will not incur a fee. 
+    public boolean payItem() {
+        if (payment == false) {
+            System.out.print("Registration has not been paid for and will now charge $50!\n"); 
+            this.payment = true;
+        }
+        else {
+            System.out.print("Registration has already been paid for, and will not charge $50!\n");
+        }
+        
+        return true;
+    }
+
 
 }

@@ -41,21 +41,25 @@ public class Course {
         this.category = category;
     }
 
+    // creating multiple choice method
     public boolean createMultipleChoice() {
         System.out.print("Created Multiple Choices!");
         return true;
     }
 
+    // creating exam method
     public boolean createExam() {
         System.out.print("Created Exam!");
         return true;
     }
 
+    // creating project method
     public boolean Project() {
         System.out.print("Created Project!");
         return true;
     }
 
+    // creating refund method
     public boolean Refund() {
         System.out.print("Refunded Item!");
         return true;
