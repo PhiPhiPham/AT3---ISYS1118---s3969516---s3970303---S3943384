@@ -1,18 +1,34 @@
 package sub_scenario_2;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Manager extends Admin{
-    
-public Manager(String name, String address, String email, Integer phoneNo, String username, String password) {
-    super(name, address, email, phoneNo, username, password);
+// Define the Manager class, which extends Admin
+public class Manager extends Admin {
+
+    // Declare class-level attributes
     private List<Instructor> instructorList;
-}
+    private Database database; 
+    
+    // Constructor for the Manager class
+    public Manager(String name, String address, String email, Integer phoneNo, String username, String password) {
+        super(name, address, email, phoneNo, username, password); // Call the constructor of the parent class (Admin)
+        
+        // Initialize the instructorList as an ArrayList
+        instructorList = new ArrayList<Instructor>();
+    }
 
-public void accessInstructor() {
-    instructorList = Database.displayInstructors();
-}
+    // Method to access instructors
+    public List<Instructor> accessInstructor() {
+        // Call the displayInstructors method on the database instance
+        instructorList = database.displayInstructors();
 
-public Boolean accessComplaints() {
-    return true;
-}
+        // Return the list of instructors
+        return instructorList;
+    }
 
+    // Method to access complaints
+    public List<String> accessComplaints() {
+        // Return a list of complaints by calling the getComplaints method on the queries object
+        return database.getComplaints();
+    }
 }

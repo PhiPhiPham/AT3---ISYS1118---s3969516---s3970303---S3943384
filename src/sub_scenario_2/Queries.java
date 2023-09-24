@@ -1,45 +1,37 @@
 package sub_scenario_2;
+import java.util.List;
 
 public class Queries {
-    private String questions;
-    private String complaints;
-    private String reply;
 
-    public Queries() {
-        this.questions = "";
-        this.complaints = "";
-        this.reply = "";
-    }
+    private List<String> questions; // Declare as a class-level attribute
+    private List<String> complaints; // Declare as a class-level attribute
+    private List<String> replies; // Declare as a class-level attribute
 
     // Getter and setter for questions
-    public String getQuestions() {
+    public List<String> getQuestions() {
         return questions;
     }
 
-    public void setQuestions(String questions) {
-        this.questions = questions;
+    public void addQuestions(String question) {
+        questions.add(question);
     }
 
     // Getter and setter for complaints
-    public String getComplaints() {
+    public List<String> getComplaints() {
         return complaints;
     }
 
-    public void setComplaints(String complaints) {
-        this.complaints = complaints;
+    public void addComplaints(String complaint) {
+        complaints.add(complaint);
     }
 
     // Getter and setter for reply
-    public String getReply() {
-        return reply;
+    public List<String> getReply() {
+        return replies;
     }
 
-    public void setReply(String reply) {
-        this.reply = reply;
+    public void addReply(String reply) {
+        replies.add(reply);
     }
 
-    // Method to reply to a query
-    public void replyToQuery(String response) {
-        this.reply = response;
-    }
 }
