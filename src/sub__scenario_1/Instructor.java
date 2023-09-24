@@ -7,7 +7,7 @@ public class Instructor extends Admin {
     }
 
     public boolean accessInstructor() {
-        return false;
+        return true;
     }
 
 }
