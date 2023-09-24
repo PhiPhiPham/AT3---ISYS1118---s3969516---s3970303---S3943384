@@ -1,20 +1,14 @@
 package sub_scenario_2;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Database {
 
-    private List<Student> enrolledStudents; // Declare as a class-level attribute
-    private List<Instructor> registeredInstructors; // Declare as a class-level attribute
-    private List<Courses> registeredCourses; // Declare as a class-level attribute
+    private List<Student> enrolledStudents;
+    private List<Instructor> registeredInstructors; 
+    private List<Course> registeredCourses; 
+    private Queries queries;
+
     
-
-    public Database() {
-        enrolledStudents = new ArrayList<Student>();
-        registeredInstructors = new ArrayList<Instructor>();
-        registeredCourses = new ArrayList<Courses>();
-    }
-
     // Method to enroll a student
     public void enrollStudent(Student student) {
         enrolledStudents.add(student);
@@ -58,23 +52,32 @@ public class Database {
     }
 
     // Method to register a course
-    public void registerCourse(Courses course) {
+    public void registerCourse(Course course) {
         registeredCourses.add(course);
     }
 
     // Method to display registered courses
-    public List<Courses> displayCourses() {
+    public List<Course> displayCourses() {
         return registeredCourses;
     }
 
     // Method to delete a course
-    public void deleteCourse(Courses course) {
+    public void deleteCourse(Course course) {
         // Iterate through the registeredCourses list and remove the course with the given course code
-        for (Courses courseCheck : registeredCourses) {
+        for (Course courseCheck : registeredCourses) {
             if (courseCheck.equals(course)) {
                 registeredCourses.remove(course);
                 break; // Exit the loop after removal
             }
         }
+    }
+
+    // Getter for complaints and questions
+    public List<String> getQuestions() {
+        return queries.getQuestions();
+    }
+
+    public List<String> getComplaints() {
+        return queries.getComplaints();
     }
 }

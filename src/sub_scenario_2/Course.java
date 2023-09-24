@@ -1,11 +1,11 @@
 package sub_scenario_2;
 
-public class Courses {
+public class Course {
     private String title; 
     private String courseDescription;
     private String category; 
 
-    public Courses(String title, String courseDescStription, String category) {
+    public Course(String title, String courseDescStription, String category) {
         this.title = title;
         this.courseDescription = courseDescStription;
         this.category = category;

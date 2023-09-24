@@ -1,6 +1,8 @@
 package sub_scenario_2;
 
+// Define the abstract User class
 public abstract class User {
+    // Declare private attributes for user information
     private String name;
     private String address;
     private String email;
@@ -8,7 +10,7 @@ public abstract class User {
     private String username;
     private String password;
 
-    // Constructor
+    // Constructor to initialize user information
     public User(String name, String address, String email, Integer phoneNo, String username, String password) {
         this.name = name;
         this.address = address;
@@ -18,10 +20,12 @@ public abstract class User {
         this.password = password;
     }
 
+    // Getter method for 'name'
     public String getName() {
         return name;
     }
 
+    // Setter method for 'name'
     public void setName(String name) {
         this.name = name;
     }
