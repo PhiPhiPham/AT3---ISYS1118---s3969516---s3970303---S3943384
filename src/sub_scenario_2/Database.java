@@ -4,10 +4,15 @@ import java.util.List;
 
 public class Database {
 
+    private List<Student> enrolledStudents; // Declare as a class-level attribute
+    private List<Instructor> registeredInstructors; // Declare as a class-level attribute
+    private List<Courses> registeredCourses; // Declare as a class-level attribute
+    
+
     public Database() {
-        ArrayList<Student>() enrolledStudents = new ArrayList<Student>(); // Initialize the enrolledStudents list in the constructor
-        ArrayList<Instructor>() registeredInstructors = new ArrayList<Instructor>(); // Initialize the registeredInstructors list in the constructor
-        ArrayList<Courses>() registeredCourses = new ArrayList<Courses>(); // Initialize the registeredCourses list in the constructor
+        enrolledStudents = new ArrayList<Student>();
+        registeredInstructors = new ArrayList<Instructor>();
+        registeredCourses = new ArrayList<Courses>();
     }
 
     // Method to enroll a student
@@ -53,7 +58,7 @@ public class Database {
     }
 
     // Method to register a course
-    public void registerCourse(Course course) {
+    public void registerCourse(Courses course) {
         registeredCourses.add(course);
     }
 
@@ -63,9 +68,9 @@ public class Database {
     }
 
     // Method to delete a course
-    public void deleteCourse(Course course) {
+    public void deleteCourse(Courses course) {
         // Iterate through the registeredCourses list and remove the course with the given course code
-        for (Course courseCheck : registeredCourses) {
+        for (Courses courseCheck : registeredCourses) {
             if (courseCheck.equals(course)) {
                 registeredCourses.remove(course);
                 break; // Exit the loop after removal
