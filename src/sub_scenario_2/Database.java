@@ -1,5 +1,7 @@
 package sub_scenario_2;
 import java.util.List;
+import java.util.ArrayList;
+
 
 public class Database {
 
@@ -8,6 +10,14 @@ public class Database {
     private List<Course> registeredCourses; 
     private Queries queries;
 
+    public Database() {
+        enrolledStudents = new ArrayList<Student>();
+        registeredInstructors = new ArrayList<Instructor>();
+        registeredCourses = new ArrayList<Course>();
+
+        // Initialize the database attribute
+        this.queries = new Queries();
+    }
     
     // Method to enroll a student
     public void enrollStudent(Student student) {

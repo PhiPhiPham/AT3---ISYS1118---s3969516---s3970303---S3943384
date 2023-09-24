@@ -1,5 +1,6 @@
 package sub_scenario_2;
 import java.util.List;
+import java.util.ArrayList;
 
 public class Queries {
 
@@ -7,13 +8,20 @@ public class Queries {
     private List<String> complaints; // Declare as a class-level attribute
     private List<String> replies; // Declare as a class-level attribute
 
-    // Getter and setter for questions
-    public List<String> getQuestions() {
-        return questions;
+    public Queries() {
+        questions = new ArrayList<String>();
+        complaints = new ArrayList<String>();
+        replies = new ArrayList<String>();
+
     }
 
+    // Getter and setter for questions
     public void addQuestions(String question) {
         questions.add(question);
+    }
+
+    public List<String> getQuestions() {
+        return questions;
     }
 
     // Getter and setter for complaints
