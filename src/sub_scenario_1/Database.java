@@ -1,4 +1,4 @@
-package sub__scenario_1;
+package sub_scenario_1;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

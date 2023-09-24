@@ -1,4 +1,4 @@
-package sub__scenario_1;
+package sub_scenario_1;
 
 public abstract class Admin extends User {
 
