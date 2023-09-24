@@ -31,4 +31,10 @@ public class Manager extends Admin {
         // Return a list of complaints by calling the getComplaints method on the queries object
         return database.getComplaints();
     }
+
+    // Method to access general questions
+    public List<String> accessQuestions() {
+        // Return a list of complaints by calling the getComplaints method on the queries object
+        return database.getQuestions();
+    }
 }

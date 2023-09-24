@@ -72,11 +72,11 @@ public class Database {
         }
     }
 
-    // Getter for complaints and questions
+    // Getter for questions
     public List<String> getQuestions() {
         return queries.getQuestions();
     }
-
+    // Getter for complaints
     public List<String> getComplaints() {
         return queries.getComplaints();
     }
