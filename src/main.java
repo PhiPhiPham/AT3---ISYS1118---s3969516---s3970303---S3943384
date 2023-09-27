@@ -1,51 +1,68 @@
-import sub_scenario_1.*;
-import sub_scenario_2.*;
+import codespace.*;
 public class main {
     public static void main(String[] args) {
-        // Instantiating a database
-        sub_scenario_1.Database database = new sub_scenario_1.Database();
 
-        //sub scenario #1 - Instructor registers a course on the learning portal/website
+        System.out.print("\n\n\n\nWelcome to IT Ed Serves\n\n\n\n");
+
+        // Instantiating a database
+        Database database = new Database();
+
+        //sub scenario #1 - NEW Instructor registers a course on the learning portal/website
 
         //// Main route of registering a new Instructor ////
-        // User wants to add register by adding a course 
-        sub_scenario_1.Course course1 = new sub_scenario_1.Course("Introduction to Dynamic Programming", "Description of Course", "Dynamic Programming");
-        
+
+        // Creating a new instructor account
+        Instructor instructor = new Instructor("InstructorName", "InstructorAddress", "InstructorEmail", 123456789, "InstructorUsername", "InstructorPassword");
+
         // Payment
-        Payment payment1 = new Payment(50, false, "paypal");
+        Payment payment = new Payment(50, false, "paypal");
+        System.out.println();
 
-        // Checking if payment is paid and pay item
-        payment1.payItem();
+        // If Instructor paid registration fee they can create a course 
+        if (payment.payItem() == true) {
+            Course course = new Course("Introduction to Dynamic Programming", "Description of Course", instructor, "Dynamic Programming", 100);
+            System.out.println("You have created a new course with the title '" + course.getTitle() + "' Congratulations.");
 
-        // Creating a new account
-        sub_scenario_1.Instructor instructor = new sub_scenario_1.Instructor("InstructorName", "InstructorAddress", "InstructorEmail", 123456789, "InstructorUsername", "InstructorPassword");
+        // Add Course to database;
+        database.registerCourse(course);
+
 
         // Add Instructor to database
         database.registerInstructor(instructor);
+        }
+        else {
+            System.out.println("The payment has failed. Please try again or contact the support team for assistance.");
+        }        
 
-        // Add Course to Instructor
-        instructor.addCourse(course1);
-
-        // Add Course to database;
-        database.registerCourse(course1);
-
+        System.out.println("Main course of scenario #1 is now complete.\n\n");
 
         //// Alt Route of adding a course but is an existing instructor ////
+        //An assumption has been made that the instructor previously had an account//
+        
+        Instructor instructor2 = new Instructor("InstructorName", "InstructorAddress", "InstructorEmail", 123456789, "InstructorUsername", "InstructorPassword");
 
-        // User wants to add register by adding a course
-        sub_scenario_1.Course course2 = new sub_scenario_1.Course("Introduction to Algorithms", "Description of Course", "Algorithms");
+        //for the sake of example we are assuming this instructor had already previously existed.//
+        /////////////////////////////////////////////////////////////////////////////
 
-        // Checking if payment is paid and pay item
-        payment1.payItem();
+        // Payment is true because instructor had already paid the registration fee.
+        Payment payment2 = new Payment(50, true, "paypal");
+        System.out.println();
 
-        // Item has already been paid so just add course2
-        instructor.addCourse(course2);
+        // If Instructor had previously paid the fee they can create another couse without paying again
+        if (payment2.payItem() == true) {
+            Course course2 = new Course("Introduction to Dynamic Programming", "Description of Course", instructor2, "Dynamic Programming", 100);
+            System.out.println("You have created a new course with the title '" + course2.getTitle() + "' Congratulations.");
 
         // Add Course to database;
         database.registerCourse(course2);
 
-
-
+        // Add Instructor to database
+        database.registerInstructor(instructor2);
+        }
+        else {
+            System.out.println("The payment has failed. Please try again or contact the support team for assistance.");
+        }       
+        System.out.println("Alternate course of scenario #1 is now complete.\n\n");
         //sub scenario #2 - Lodge a general enquiry about the portal which is successfully addressed by the Manager
 
         // Initialize a new Manager instance
@@ -60,5 +77,7 @@ public class main {
 
         //Manager addresses query
         System.out.println(queries.getQuestions());
+
+        System.out.println("Scenario #2 is now complete.\n\n");
     }
 }

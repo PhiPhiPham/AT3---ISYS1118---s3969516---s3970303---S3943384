@@ -1,4 +1,4 @@
-package sub_scenario_1;
+package codespace;
 
 public class Student extends User  {
     private int emergencyContact;
@@ -17,6 +17,16 @@ public class Student extends User  {
     // Getter for emergency contact 
     public Integer getEmergencyContact() {
         return this.emergencyContact;
+    }
+
+    // Student payment confirmation
+    public boolean paymentConfirmation(boolean confirmation) {
+        if (confirmation == true) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     // Method to access a Student object

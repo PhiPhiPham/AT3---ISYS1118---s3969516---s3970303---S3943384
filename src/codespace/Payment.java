@@ -1,4 +1,4 @@
-package sub_scenario_1;
+package codespace;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,14 +49,14 @@ public class Payment {
     // Instructor paying to add a course. If already paid, additional courses will not incur a fee. 
     public boolean payItem() {
         if (payment == false) {
-            System.out.print("Registration has not been paid for and will now charge $50!\n"); 
+            System.out.print("Registration has not been paid for and will now charge $" + amount + ", thank you.\n"); 
             this.payment = true;
         }
         else {
-            System.out.print("Registration has already been paid for, and will not charge $50!\n");
+            System.out.print("Registration has already been paid for, thank you.\n");
         }
         
-        return true;
+        return this.payment;
     }
 
 

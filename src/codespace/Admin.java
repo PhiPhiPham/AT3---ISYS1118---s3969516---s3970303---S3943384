@@ -1,4 +1,4 @@
-package sub_scenario_2;
+package codespace;
 
 public abstract class Admin extends User {
 
@@ -7,6 +7,7 @@ public abstract class Admin extends User {
         super(name, address, email, phoneNo, username, password);
     }
 
+    //send auto emails for admin
     public String sendAutoEmail(String email) {
         return email;
     }

@@ -1,4 +1,4 @@
-package sub_scenario_2;
+package codespace;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -8,7 +8,10 @@ public class Database {
     private List<Student> enrolledStudents;
     private List<Instructor> registeredInstructors; 
     private List<Course> registeredCourses; 
+    private List<String> courseInfo; 
+    private boolean signedIn = false;
     private Queries queries;
+    private Course course;
 
     public Database() {
         enrolledStudents = new ArrayList<Student>();
@@ -20,7 +23,7 @@ public class Database {
     }
     
     // Method to enroll a student
-    public void enrollStudent(Student student) {
+    public void studentEnroll(Student student) {
         enrolledStudents.add(student);
     }
 
@@ -37,6 +40,40 @@ public class Database {
                 enrolledStudents.remove(student);
                 break; // Exit the loop after removal
             }
+        }
+    }
+
+    public boolean loginInstructor(Instructor instructor) {
+        if (registeredInstructors.contains(instructor)) {
+            signedIn = true;
+        }
+        else {
+            System.out.println("Please create an Instructor account.");
+            signedIn = false;
+        }
+        return signedIn;
+    }
+
+    public void createInstructor(String name, String address, String email, int phoneNo, String username, String password) {
+        //check if signed in, if signed in break, if not sign up.
+        if (signedIn == true) {
+            return;
+        }
+        else {
+            Instructor instructor = new Instructor(name, address, email, phoneNo, username, password);
+            loginInstructor(instructor);
+            registeredInstructors.add(instructor);
+        }
+    }
+
+    // Method to register an instructor
+    public void registerCourse(String title, String courseDescStription, Instructor instructor, String category, Integer fee) {
+        if (registeredInstructors.contains(instructor) && signedIn == true){
+            Course course = new Course(title, courseDescStription, instructor, category, fee);
+            registeredCourses.add(course);
+        }
+        else {
+            System.out.println("Please create an Instructor account or log in to continue.");
         }
     }
 
@@ -80,6 +117,13 @@ public class Database {
                 break; // Exit the loop after removal
             }
         }
+    }
+
+    public List<String> getCourseInformation(){
+        courseInfo.add(course.getTitle());
+        courseInfo.add(course.getCourseDescription());
+        courseInfo.add(course.getCategory());
+        return courseInfo;
     }
 
     // Getter for questions

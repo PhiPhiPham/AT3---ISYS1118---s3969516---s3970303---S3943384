@@ -1,4 +1,4 @@
-package sub_scenario_2;
+package codespace;
 import java.util.List;
 
 // Define the Instructor class, which extends Admin
